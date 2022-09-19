@@ -1,0 +1,31 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="MobileAutomationTestNgSuite" verbose="10">
+	<parameter name="appiumserver"
+		value="http://127.0.0.1:4723/wd/hub" />
+	<test name="ECommerceAmazonAppTest" preserve-order="true"
+		thread-count="10" parallel="methods">
+		<classes>
+			<class name="com.harsha.test.ECommerceAmazonAppTest">
+				<parameter name="emulator" value="false" />		
+				<parameter name="deviceName" value="32006abdf06b55ef" />
+				<parameter name="platformName" value="android" />
+				<parameter name="platformVersion" value="10.0" />
+				<parameter name="appPackage" value="in.amazon.mShop.android.shopping" />
+				<parameter name="appActivity" value="com.amazon.mShop.navigation.MainActivity" />
+			</class>
+		</classes>
+	</test>
+	<test name="ECommerceFilpkartAppTest" preserve-order="true"
+		thread-count="10" parallel="methods">
+		<classes>
+			<class name="com.harsha.test.ECommerceFilpkartAppTest">
+				<parameter name="emulator" value="true" />
+				<parameter name="deviceName" value="emulator-5554" />
+				<parameter name="platformName" value="android" />
+				<parameter name="platformVersion" value="10.0" />
+				<parameter name="appPackage" value="com.flipkart.android" />
+				<parameter name="appActivity" value="com.flipkart.android.activity.HomeFragmentHolderActivity" />
+			</class>
+		</classes>
+	</test>
+</suite>
